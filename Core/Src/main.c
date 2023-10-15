@@ -21,9 +21,9 @@ uint16_t duty;
 
 int main(void)
 {
+	USART1_Config();
         ADC1_Config();
 	DMA_Init();
-	USART1_Config();
 	Tim1_PWM_Config();
         osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
         defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
